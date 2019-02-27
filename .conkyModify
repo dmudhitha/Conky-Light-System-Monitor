@@ -1,0 +1,76 @@
+-- Conky, a system monitor
+-- Modify by Mudhitha Dharmasena
+
+conky.config = {
+
+-- Conky settings
+	
+	alignment = 'top_left',
+	background = true,
+	use_xft = true,
+	xftalpha= .1,
+	total_run_times= 0,
+	update_interval = 1,
+	double_buffer = true,
+
+-- Setup Windows
+	own_window = true,
+	own_window_type = 'desktop',
+	own_window_argb_visual = true,  
+	-- own_window_argb_value = 0,
+	own_window_title = 'System-Mudhy',
+	own_window_transparent = true,
+	own_window_class = 'conky',
+	own_window_colour = '000000',
+	own_window_hints = undecorated,below,sticky,skip_taskbar,skip_pager,
+	
+-- Alignment Windows
+
+	minimum_height = 10,
+	minimum_width = 10,
+	maximum_width = 1366,
+	gap_x = 20,
+	gap_y = 10,
+
+-- Text settings
+	
+	font = 'Serif:light:size=9',
+	override_utf8_locale = true,
+	uppercase = false,
+	border_inner_margin = 0,
+	pad_percents = 2,
+	use_spacer = 'left',
+	
+--Graphics settings
+	
+	draw_shades = false,
+	draw_outline = false,
+	draw_borders= false,
+	draw_graph_borders = false,
+	default_color = '48b844',
+	default_shade_color = 000000,
+	default_outline_color = 'FFFFFF',
+	no_buffers= true,
+}
+
+conky.text = [[
+${voffset 4}${goto 10}${font Serif:bold:size=9}${color d03d40}CPU ~ ${color}${font}${goto 35}${offset 20}${font Serif:size=9}Core 1 ${font}${cpubar cpu1 10,60}${offset 12}${cpu cpu1}%${goto 210}${font Serif:size=9}Core 2 ${font}${cpubar cpu2 10,60}${offset 12}${cpu cpu2}% \
+${goto 366}${font Serif:bold:size=9}${color d03d40}RAM${color}${font}~ ${membar 10,100}${offset 8}${memperc}% \
+${goto 570}${font Serif:bold:size=9}${color d03d40}TEMP${color}${font} ~[CPU]${acpitemp}° \
+${if_existing /proc/net/route wlx7cdd90840a37} \
+${goto 700}${font Serif:bold:size=9}${color d03d40}DOWNLOAD${color}${font} ~${downspeed wlx7cdd90840a37}/s - ${totaldown wlx7cdd90840a37} \
+${goto 940} ${font Serif:bold:size=9}${color d03d40}UPLOAD${color}${font} ~ ${upspeed wlx7cdd90840a37}/s - ${totalup wlx7cdd90840a37} \
+${else} \
+${if_existing /proc/net/route enp2s0} \
+${goto 700}${font Serif:bold:size=9}${color d03d40}DOWNLOAD${color}${font} ~${downspeed enp2s0}/s - ${totaldown enp2s0} \
+${goto 940} ${font Serif:bold:size=9}${color d03d40}UPLOAD${color}${font} ~${upspeed enp2s0}/s - ${totalup enp2s0}
+${else}${color grey}${offset 40}No Network Interface Found !${endif}${endif} \
+${goto 1180}${voffset -20}${font Carlito:light:size=8}${color white}Download${offset 54}Upload${font}${color}${goto 1366}
+${goto 60}${voffset 10}${color orange} System - $sysname | Kernel - $kernel | Mem - $mem / $memmax | Swap - $swap  / $swapmax | File System Keep $fs_used of $fs_size - $fs_used_perc% - [${blink By Mudhitha}] ${color}
+${goto 1158}${voffset -30}${execpi 10 /home/mudhitha/.conky/conky.sh}${voffset 5}
+${goto 1175}${color yellow}${font Serif:bold:size=12}${scroll 15 uptime : ${uptime}}${font}${color}
+${goto 500}${voffset -25}${font Serif:light:size=40}${time %l:%M:%S %p}${font}
+${offset 530}${voffset 10}${font Carlito:light:size=13}${time %F, %A}${font}${voffset -108}
+${image /home/mudhitha/.conky/dark-cover.png -p 2,1 -s 1140x20}
+${image /home/mudhitha/.conky/dark-gray.png -p 1150,1 -s 200x100}
+]]
