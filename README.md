@@ -21,12 +21,12 @@ conky -b &
 
 $  ip link show ,lspci,ifconfig -a, netstat -i වැනි විධාන භාවිතා කිරීමෙන් පරිගන්කයේ ජාල අතුරු මුහුනත් හඩුනා ගත හැක.
 mudhitha@peek-desktop:[~]
-$  netstat -i
-Kernel Interface table
-Iface      MTU    RX-OK RX-ERR RX-DRP RX-OVR    TX-OK TX-ERR TX-DRP TX-OVR Flg
-enp2s0    1500    30591      0      0 0         31225      0      0      0 BMRU
-lo       65536     2138      0      0 0          2138      0      0      0 LRU
-wlx7cdd9  1500        0      0      0 0             0      0      0      0 BMU
+
+$  netstat -i <br/>
+Kernel Interface table Iface      MTU    RX-OK RX-ERR RX-DRP RX-OVR    TX-OK TX-ERR TX-DRP TX-OVR Flg <br/>
+enp2s0    1500    30591      0      0 0         31225      0      0      0 BMRU <br/>
+lo       65536     2138      0      0 0          2138      0      0      0 LRU <br/>
+wlx7cdd9  1500        0      0      0 0             0      0      0      0 BMU <br/>
 
 එ අනුව -
 
