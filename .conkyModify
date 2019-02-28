@@ -63,12 +63,12 @@ ${goto 940} ${font Serif:bold:size=9}${color d03d40}UPLOAD${color}${font} ~ ${up
 ${else} \
 ${if_existing /proc/net/route enp2s0} \
 ${goto 700}${font Serif:bold:size=9}${color d03d40}DOWNLOAD${color}${font} ~${downspeed enp2s0}/s - ${totaldown enp2s0} \
-${goto 940} ${font Serif:bold:size=9}${color d03d40}UPLOAD${color}${font} ~${upspeed enp2s0}/s - ${totalup enp2s0}
+${goto 940} ${font Serif:bold:size=9}${color d03d40}UPLOAD${color}${font} ~${upspeed enp2s0}/s - ${totalup enp2s0} \
 ${else}${color grey}${offset 40}No Network Interface Found !${endif}${endif} \
-${goto 1180}${voffset -20}${font Carlito:light:size=8}${color white}Download${offset 54}Upload${font}${color}${goto 1366}
-${goto 60}${voffset 10}${color orange} System - $sysname | Kernel - $kernel | Mem - $mem / $memmax | Swap - $swap  / $swapmax | File System Keep $fs_used of $fs_size - $fs_used_perc% - [${blink By Mudhitha}] ${color}
+${goto 1180}${voffset -20}${font Carlito:light:size=8}${color white}Download${offset 54}Upload${font}${color}
+${voffset 20}${goto 60}${color orange} System - $sysname | Kernel - $kernel | Mem - $mem / $memmax | Swap - $swap  / $swapmax | File System Keep $fs_used of $fs_size - $fs_used_perc% - [${blink By Mudhitha}] ${color}
 ${goto 1158}${voffset -30}${execpi 10 /home/mudhitha/.conky/conky.sh}${voffset 5}
-${goto 1175}${color yellow}${font Serif:bold:size=12}${scroll 15 uptime : ${uptime}}${font}${color}
+${goto 1175}${color 15ad78}${font Serif:bold:size=10}${scroll 15 uptime : ${uptime}}${font}${color}
 ${goto 500}${voffset -25}${font Serif:light:size=40}${time %l:%M:%S %p}${font}
 ${offset 530}${voffset 10}${font Carlito:light:size=13}${time %F, %A}${font}${voffset -108}
 ${image /home/mudhitha/.conky/dark-cover.png -p 2,1 -s 1140x20}
