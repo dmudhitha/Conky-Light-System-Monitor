@@ -20,13 +20,13 @@ conky -b &
 **1) .conkyModify ගොනුව**
 
 $  ip link show ,lspci,ifconfig -a, netstat -i වැනි විධාන භාවිතා කිරීමෙන් පරිගන්කයේ ජාල අතුරු මුහුනත් හඩුනා ගත හැක.
-mudhitha@peek-desktop:[~]
 
-$  netstat -i <br/>
-Kernel Interface table Iface      MTU    RX-OK RX-ERR RX-DRP RX-OVR    TX-OK TX-ERR TX-DRP TX-OVR Flg <br/>
-enp2s0    1500    30591      0      0 0         31225      0      0      0 BMRU <br/>
-lo       65536     2138      0      0 0          2138      0      0      0 LRU <br/>
-wlx7cdd9  1500        0      0      0 0             0      0      0      0 BMU <br/>
+mudhitha@peek-desktop:[~]
+$ nmcli --terse --fields DEVICE,STATE dev status
+
+enp2s0:connected<br>
+wlx7cdd90840a37:disconnected<br>
+lo:unmanaged
 
 එ අනුව -
 
@@ -50,7 +50,9 @@ conky.config[[  ------------> maximum_width = 1366,
 
 Conky ගොනුව නිර්මාණය කර ඇත්තේ 1366 පළලක් සහිත තිර සදහා බැවින් ඊට අඩු තිර සදහා ${goto xx},${offset xx} හා ${voffset xx} වෙනස් කිරීමට සිදු විය හැකිය.
 
-**ඉහත සදහන් ආකාරයේ සැකසුමක් සාදා ගැනීමට පහත සදහන් ගොනු ඔබේ අව්ශ්යතාවයට ගැලපෙන ලෙස සැකසුම් සකසා භාවිතා කරන්න.**
+# භාවිතා කල හැකි ආකාරය
+
+**ඉහත සදහන් ආකාරයේ සැකසුමක් මගින් ඔබේ අව්ශ්යතාවයට ගැලපෙන ලෙස සකසා ගත් අනතුරුව පහත ආකාරයේ දැක්වෙන ගොනු ලෙස සකසා භාවිතා කල හැක.**
 
 File save as :-  conkystartup.sh
 Path :- ~/
